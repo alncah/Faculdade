@@ -1,0 +1,174 @@
+/* Reset box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonte e fundo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+
+  /* GRID PRINCIPAL (corrigido) */
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  gap: 20px;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Áreas do grid */
+header {
+  grid-area: header;
+  background-color: #8b0000;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/* Flexbox no nav */
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+header nav a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+  grid-area: main;
+}
+
+article {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+article h2 {
+  font-size: 1.8rem;
+  color: #8b0000;
+  margin-bottom: 15px;
+}
+
+article p {
+  margin-bottom: 15px;
+}
+
+/* Capa */
+.capa-jogo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.capa-jogo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Conquistas com Flex */
+.conquista {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.conquista img {
+  flex-shrink: 0;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #555;
+}
+
+.titulo-legenda {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Sidebar */
+aside {
+  grid-area: aside;
+  background-color: #eaeaea;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+aside h3 {
+  color: #8b0000;
+  margin-bottom: 10px;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  margin-bottom: 8px;
+}
+
+aside a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+aside a:hover {
+  color: #8b0000;
+}
+
+/* Rodapé */
+footer {
+  grid-area: footer;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+
+    grid-template-columns: 1fr;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
