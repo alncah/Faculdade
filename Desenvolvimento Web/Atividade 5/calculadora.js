@@ -1,5 +1,5 @@
 
-const valorConta = 365;
+const valorConta = 15;
 const percentualGorjeta = 12;
 
 
